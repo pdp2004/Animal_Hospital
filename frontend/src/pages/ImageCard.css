@@ -1,0 +1,158 @@
+.petshop-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px;
+  font-family: Arial, sans-serif;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+/* Left Section */
+.petshop-left {
+  flex: 1;
+  animation: fadeInLeft 1.2s ease-in-out;
+}
+
+.title {
+  font-size: 40px;
+  font-weight: bold;
+  color: #f28c28;
+  margin-bottom: 15px;
+}
+
+.desc {
+  font-size: 16px;
+  color: #444;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.shop-btn {
+  background: #f28c28;
+  color: white;
+  text-decoration: none;
+  border: none;
+  padding: 12px 25px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: transform 0.3s, background 0.3s;
+}
+
+.shop-btn:hover {
+  transform: scale(1.1);
+  background: #e67614;
+}
+
+/* Right Section */
+.petshop-right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fadeInRight 1.2s ease-in-out;
+}
+
+.owner {
+  position: relative;
+  width: 300px;
+  height: 300px;
+}
+
+.owner-img {
+  width: 100%;
+  margin-top: 40px;
+  height: auto;
+  border-radius: 10px;
+  /* animation: float 4s ease-in-out infinite; */
+}
+
+.dog, .cat, .cat2 {
+  position: absolute;
+  width: 80px;
+  height: auto;
+  transition: transform 0.3s;
+}
+
+.dog:hover, .cat:hover, .cat2:hover {
+  transform: scale(1.2) rotate(5deg);
+}
+
+/* Position the pets */
+.dog {
+  bottom: -10px;
+  left: 20px;
+}
+
+.cat {
+  bottom: -10px;
+  right: 20px;
+}
+
+.cat2 {
+  top: -30px;
+  left: 100px;
+}
+
+/* Animations */
+.bounce {
+  animation: bounce 2s infinite;
+}
+
+.wave {
+  animation: wave 2s infinite;
+}
+
+.blink {
+  animation: blink 1.5s infinite;
+}
+
+/* Keyframes */
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+@keyframes wave {
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(12deg); }
+}
+
+@keyframes blink {
+  0%, 30%, 100% { opacity: 1; }
+  40%, 60% { opacity: 0; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+@keyframes fadeInLeft {
+  from { opacity: 0; transform: translateX(-50px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeInRight {
+  from { opacity: 0; transform: translateX(50px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .petshop-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .owner {
+    width: 220px;
+    height: auto;
+  }
+
+  .dog, .cat, .cat2 {
+    width: 60px;
+  }
+}

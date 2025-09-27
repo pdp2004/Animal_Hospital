@@ -1,0 +1,241 @@
+.home-container {
+    font-family: "Arial", sans-serif;
+    color: #333;
+    line-height: 1.6;
+  }
+  
+  /* Hero Section */
+  .hero-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 80px 40px;
+    background: #fef9f4;
+    flex-wrap: wrap;
+  }
+  
+  .hero-content {
+    flex: 1;
+    min-width: 300px;
+  }
+  
+  .hero-content h1 {
+    font-size: 42px;
+    font-weight: bold;
+    color: #f7941d;
+    margin-bottom: 20px;
+  }
+  
+  .hero-content p {
+    font-size: 18px;
+    margin-bottom: 25px;
+  }
+  
+  .hero-buttons .btn-primary,
+  .hero-buttons .btn-secondary {
+    margin-right: 15px;
+    margin-bottom: 10px;
+  }
+  
+  .hero-image {
+    flex: 1;
+    text-align: center;
+    min-width: 280px;
+  }
+  
+  .hero-placeholder {
+    background: #fff;
+    border: 2px dashed #f7941d;
+    padding: 40px;
+    border-radius: 20px;
+    font-size: 32px;
+  }
+  
+  /* Buttons */
+  .btn-primary {
+    background: #f7941d;
+    color: #fff;
+    padding: 14px 28px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 16px;
+    transition: 0.3s;
+  }
+  
+  .btn-primary:hover {
+    background: #e68300;
+  }
+  
+  .btn-secondary {
+    background: #fff;
+    color: #f7941d;
+    border: 2px solid #f7941d;
+    padding: 12px 26px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 16px;
+    transition: 0.3s;
+  }
+  
+  .btn-secondary:hover {
+    background: #fef1e0;
+  }
+  
+  .btn-large {
+    font-size: 18px;
+    padding: 16px 32px;
+  }
+  
+  /* Features Section */
+  .features-section {
+    padding: 60px 20px;
+    background: #fff;
+    text-align: center;
+  }
+  
+  .features-section h2 {
+    margin-bottom: 40px;
+    font-size: 32px;
+  }
+  
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+  }
+  
+  .feature-card {
+    background: #fef9f4;
+    padding: 25px;
+    border-radius: 15px;
+    transition: 0.3s;
+  }
+  
+  .feature-card:hover {
+    background: #fff7ec;
+    box-shadow: 0px 4px 12px rgba(0,0,0,0.08);
+  }
+  
+  .feature-icon {
+    font-size: 40px;
+    margin-bottom: 15px;
+  }
+  
+  /* Services Section */
+  .services-preview {
+    padding: 60px 20px;
+    background: #fdfdfd;
+    text-align: center;
+  }
+  
+  .services-preview h2 {
+    margin-bottom: 40px;
+    font-size: 32px;
+  }
+  
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+  }
+  
+  .service-preview-card {
+    background: #fef9f4;
+    padding: 20px;
+    border-radius: 12px;
+    transition: 0.3s;
+  }
+  
+  .service-preview-card:hover {
+    background: #fff7ec;
+    transform: translateY(-4px);
+  }
+  
+  .text-center {
+    margin-top: 30px;
+  }
+  
+  /* Testimonials */
+  .testimonials-section {
+    padding: 70px 20px;
+    background: #fff;
+    text-align: center;
+  }
+  
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+  }
+  
+  .testimonial-card {
+    background: #fef9f4;
+    padding: 25px;
+    border-radius: 12px;
+    font-style: italic;
+  }
+  
+  .testimonial-author {
+    margin-top: 15px;
+    font-style: normal;
+    color: #555;
+  }
+  
+  /* Emergency Banner */
+  .emergency-banner {
+    background: #f7941d;
+    color: #fff;
+    padding: 60px 20px;
+  }
+  
+  .emergency-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1100px;
+    margin: auto;
+  }
+  
+  .emergency-info {
+    flex: 2;
+  }
+  
+  .emergency-actions {
+    flex: 1;
+    text-align: right;
+    min-width: 200px;
+  }
+  
+  .btn-emergency {
+    background: #fff;
+    color: #f7941d;
+    font-size: 18px;
+    padding: 14px 32px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .btn-emergency:hover {
+    background: #fef1e0;
+  }
+  
+  /* CTA Section */
+  .cta-section {
+    padding: 70px 20px;
+    background: #fef9f4;
+    text-align: center;
+  }
+  
+  .cta-content h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+  }
+  
+  .cta-buttons {
+    margin-top: 25px;
+  }
+  
