@@ -23,7 +23,7 @@ const Patients = () => {
 
   const fetchPatients = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/api/patients');
+      const response = await axios.get('http://localhost:3000/api/patients');
       let data = response.data;
 
       // Optional: filter by logged-in user
@@ -42,7 +42,7 @@ const Patients = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:5000/api/patients', formData);
+      await axios.post('http://localhost:3000/api/patients', formData);
       setShowForm(false);
       setFormData({ name: '', species: '', breed: '', age: '', weight: '' });
       fetchPatients(); // Refresh the list

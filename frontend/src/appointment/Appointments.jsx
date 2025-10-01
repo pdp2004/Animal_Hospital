@@ -14,7 +14,7 @@ const Appointments = () => {
 
   const fetchAppointments = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/api/appointments');
+      const response = await axios.get('http://localhost:3000/api/appointments');
       let data = response.data;
 
       // Optional: filter appointments for the logged-in user

@@ -43,33 +43,18 @@ const Footer = () => {
             <h4>Follow Us</h4>
             <div className="social-links">
               <a href="#" className="social-link" aria-label="Facebook">
-                <span className="social-icon">📘</span>
+                <i className="bi bi-facebook"></i>
               </a>
               <a href="#" className="social-link" aria-label="Instagram">
-                <span className="social-icon">📷</span>
+                <i className="bi bi-instagram"></i>
               </a>
               <a href="#" className="social-link" aria-label="Twitter">
-                <span className="social-icon">🐦</span>
+                <i className="bi bi-twitter"></i>
               </a>
               <a href="#" className="social-link" aria-label="YouTube">
-                <span className="social-icon">📺</span>
+                <i className="bi bi-youtube"></i>
               </a>
             </div>
-          </div>
-        </div>
-
-        {/* Newsletter signup with animation */}
-        <div className="newsletter-section">
-          <h4>Stay Updated!</h4>
-          <div className="newsletter-form">
-            <input 
-              type="email" 
-              placeholder="Enter your email for animal updates..."
-              className="newsletter-input"
-            />
-            <button className="newsletter-btn">
-              Subscribe 🐾
-            </button>
           </div>
         </div>
 
@@ -85,6 +70,9 @@ const Footer = () => {
           </div>
         </div>
       </div>
+
+      {/* Bootstrap Icons CDN */}
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" />
     </footer>
   );
 };

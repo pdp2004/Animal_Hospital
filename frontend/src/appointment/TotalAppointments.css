@@ -1,92 +1,185 @@
+/* === TotalAppointments.css === */
+
+/* --- Layout --- */
 .appointments-container {
-  max-width: 1000px;
-  margin: 20px auto;
+  max-width: 1200px;
+  margin: 40px auto;
   padding: 20px;
-  font-family: Arial, sans-serif;
+  font-family: "Inter", Arial, sans-serif;
+  color: #333;
 }
 
 h2 {
   text-align: center;
-  margin-bottom: 20px;
-  color: #333;
+  margin-bottom: 25px;
+  font-size: 2rem;
+  color: #222;
+  font-weight: 600;
 }
 
+/* --- Total Count --- */
 .total-count {
   text-align: center;
   margin-bottom: 30px;
 }
 
-.total-count .count {
-  font-size: 50px;
-  font-weight: bold;
-  color: #4caf50;
-  animation: fadeIn 1s ease-in-out;
+.count {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #007bff;
+  background: #e8f1ff;
+  padding: 12px 25px;
+  border-radius: 12px;
+  display: inline-block;
+  box-shadow: 0 4px 10px rgba(0, 123, 255, 0.15);
 }
 
+/* --- Grid Layout --- */
 .appointments-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
   gap: 20px;
 }
 
+/* --- Appointment Card --- */
 .appointment-card {
   background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   padding: 20px;
-  transition: transform 0.2s;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .appointment-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
 }
 
+/* --- Card Header --- */
 .card-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 15px;
+  margin-bottom: 12px;
 }
 
 .card-header h3 {
+  font-size: 1.2rem;
   margin: 0;
-  font-size: 20px;
-  color: #222;
+  color: #333;
 }
 
+.card-header span {
+  font-size: 0.9rem;
+}
+
+/* --- Status Badges --- */
 .status-badge {
-  padding: 4px 10px;
-  border-radius: 6px;
-  font-size: 12px;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: capitalize;
+  color: #fff;
+}
+
+/* Color coding for appointment statuses */
+.status-badge.pending {
+  background: #ffc107;
   color: #fff;
 }
 
 .status-badge.confirmed {
-  background: #4caf50;
-}
-.status-badge.pending {
-  background: #ff9800;
-}
-.status-badge.cancelled {
-  background: #f44336;
+  background: #007bff;
 }
 
-.card-details .detail-row {
+.status-badge.completed {
+  background: #28a745;
+}
+
+.status-badge.cancelled {
+  background: #dc3545;
+}
+
+/* --- Details Section --- */
+.card-details {
+  font-size: 0.95rem;
+  color: #444;
+  margin-bottom: 15px;
+  border-top: 1px solid #eee;
+  padding-top: 10px;
+}
+
+.detail-row {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 8px;
+  margin: 6px 0;
 }
 
 .label {
-  font-weight: bold;
+  font-weight: 600;
   color: #555;
 }
 
-.value {
-  color: #333;
+/* --- Buttons --- */
+.card-actions {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; transform: scale(0.9); }
-  to { opacity: 1; transform: scale(1); }
+button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 8px 14px;
+  font-size: 0.9rem;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+/* Confirm button */
+.btn-confirm {
+  background: #007bff;
+  color: #fff;
+}
+
+.btn-confirm:hover {
+  background: #0056b3;
+}
+
+/* Cancel button */
+.btn-cancel {
+  background: #dc3545;
+  color: #fff;
+}
+
+.btn-cancel:hover {
+  background: #b02a37;
+}
+
+/* Complete button */
+.btn-complete {
+  background: #28a745;
+  color: #fff;
+}
+
+.btn-complete:hover {
+  background: #1e7e34;
+}
+
+/* --- Error / Loading Messages --- */
+.error {
+  text-align: center;
+  color: #dc3545;
+  font-weight: 600;
+}
+
+p {
+  text-align: center;
+  font-size: 1rem;
+  color: #666;
 }

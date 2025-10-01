@@ -14,7 +14,7 @@ const TotalAppointments = () => {
     try {
       setLoading(true);
       const res = await axios.get(
-        "http://localhost:5000/api/appointments/appointments"
+        "http://localhost:3000/api/appointments/appointments"
       );
 
       const data = Array.isArray(res.data)
@@ -62,7 +62,7 @@ const TotalAppointments = () => {
   // ✅ Confirm appointment
   const handleConfirm = async (id) => {
     try {
-      await axios.put(`http://localhost:5000/api/appointments/${id}/confirm`);
+      await axios.put(`http://localhost:3000/api/appointments/${id}/confirm`);
       fetchAppointments();
     } catch (err) {
       console.error("Error confirming appointment:", err);
@@ -77,7 +77,7 @@ const TotalAppointments = () => {
       return;
     }
     try {
-      await axios.put(`http://localhost:5000/api/appointments/${id}/cancel`);
+      await axios.put(`http://localhost:3000/api/appointments/${id}/cancel`);
       fetchAppointments();
     } catch (err) {
       console.error("Error cancelling appointment:", err);
@@ -88,7 +88,7 @@ const TotalAppointments = () => {
   // ✅ Complete appointment
   const handleComplete = async (id) => {
     try {
-      await axios.put(`http://localhost:5000/api/appointments/${id}/complete`);
+      await axios.put(`http://localhost3000/api/appointments/${id}/complete`);
       fetchAppointments();
     } catch (err) {
       console.error("Error completing appointment:", err);

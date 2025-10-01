@@ -94,34 +94,50 @@ export const appointments = async (req, res) => {
 
 export const todayAppointment = async (req, res) => {
   try {
-    const today = new Date();
-    const yyyy = today.getFullYear();
-    const mm = String(today.getMonth() + 1).padStart(2, "0");
-    const dd = String(today.getDate()).padStart(2, "0");
-    const todayStr = `${yyyy}-${mm}-${dd}`; // format "YYYY-MM-DD"
+    // Get start and end of today's date range
+    const startOfToday = new Date();
+    startOfToday.setHours(0, 0, 0, 0);
 
-    const todaysAppointments = await Appointment.find({ date: todayStr }).sort({
-      time: 1,
+    const endOfToday = new Date();
+    endOfToday.setHours(23, 59, 59, 999);
+
+    // Fetch appointments within today's date range
+    const todaysAppointments = await Appointment.find({
+      date: { $gte: startOfToday, $lte: endOfToday },
+    }).sort({ time: 1 });
+
+    return res.status(200).json({
+      success: true,
+      count: todaysAppointments.length,
+      data: todaysAppointments,
     });
-
-    res.json(todaysAppointments);
   } catch (err) {
-    console.error("Error fetching today’s appointments:", err);
-    res.status(500).json({ error: "Failed to fetch today’s appointments" });
+    console.error("❌ Error fetching today’s appointments:", err);
+    return res.status(500).json({
+      success: false,
+      error: "Failed to fetch today’s appointments",
+    });
   }
 };
-
-export const upcomingAppointment = async (req, res) => {
+export const getUpcomingAppointments = async (req, res) => {
   try {
     const now = new Date();
 
-    // Convert `date + time` into Date object inside MongoDB query
-    const upcoming = await Appointment.aggregate([
+    const upcomingAppointments = await Appointment.aggregate([
       {
+        // Convert stored `date` + `time` into one comparable datetime
         $addFields: {
           aptDateTime: {
             $dateFromString: {
-              dateString: { $concat: ["$date", "T", "$time"] }, // "2025-09-11T15:00"
+              dateString: {
+                $concat: [
+                  {
+                    $dateToString: { date: "$date", format: "%Y-%m-%d" },
+                  },
+                  "T",
+                  "$time",
+                ],
+              },
               onError: null,
               onNull: null,
             },
@@ -129,6 +145,7 @@ export const upcomingAppointment = async (req, res) => {
         },
       },
       {
+        // Only future appointments
         $match: {
           aptDateTime: { $gt: now },
         },
@@ -141,10 +158,17 @@ export const upcomingAppointment = async (req, res) => {
       },
     ]);
 
-    res.json(upcoming);
-  } catch (err) {
-    console.error("Error fetching upcoming appointments:", err);
-    res.status(500).json({ error: "Failed to fetch upcoming appointments" });
+    return res.status(200).json({
+      success: true, 
+      count: upcomingAppointments.length,
+      data: upcomingAppointments,
+    });
+  } catch (error) {
+    console.error("❌ Error fetching upcoming appointments:", error);
+    return res.status(500).json({
+      success: false,
+      error: "Failed to fetch upcoming appointments.",
+    });
   }
 };
 

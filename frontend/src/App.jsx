@@ -18,8 +18,8 @@ import VerifyOtp from './components/VerifyOtp';
 function App() {
   return (
     <Router>
+       <Navbar />
       <div className="App">
-        <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />

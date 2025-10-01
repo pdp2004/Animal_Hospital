@@ -14,11 +14,11 @@ const Home = () => {
 
   return (
     <div className="home-container">
-      <ImageCard/>
-      <FeaturesSection/>
-      <ServicesPreview/>
-      <DoctorSlider/>
-      <Slider/>
+      <ImageCard />
+      <FeaturesSection />
+      <ServicesPreview />
+      <DoctorSlider />
+      <Slider />
 
       {/* Testimonials */}
       <section className="testimonials-section">
@@ -59,23 +59,24 @@ const Home = () => {
       {/* Emergency Banner */}
       <section className="emergency-banner">
         <div className="container">
+        <h2>🚨 24/7 Emergency Veterinary Services</h2>
           <div className="emergency-content">
-            <div className="emergency-info">
-              <h2>🚨 Emergency Services Available 24/7</h2>
-              <p>If your pet needs immediate medical attention, don't wait. Call our emergency line now.</p>
+            <div className="emergency-info"> 
+              <p>For immediate and expert care of your pet, our veterinary team is available around the clock. Please do not hesitate to reach out if your pet requires urgent medical attention.</p>
               <div className="emergency-contact">
                 <strong>Emergency Hotline: (555) 123-HELP</strong>
-                <span>After-hours: (555) 555-EMER</span>
+                <span>After-Hours Assistance: (555) 555-EMER</span>
               </div>
             </div>
             <div className="emergency-actions">
-              <button className="btn-emergency">
-                📞 Call Now
+              <button className="btn-emergencyy">
+                📞 Call for Immediate Assistance
               </button>
             </div>
           </div>
         </div>
       </section>
+
 
       {/* CTA Section */}
       {/* <section className="cta-section">
@@ -98,7 +99,7 @@ const Home = () => {
         </div>
       </section> */}
 
-      <Footer/>
+      <Footer />
     </div>
   );
 };

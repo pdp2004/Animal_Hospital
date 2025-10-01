@@ -1,17 +1,25 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./Navbar.css";
 
 const Navbar = () => {
   const navigate = useNavigate();
-  const token = localStorage.getItem("token");
-  const user = JSON.parse(localStorage.getItem("user"));
-
   const [menuOpen, setMenuOpen] = useState(false);
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    const storedUser = localStorage.getItem("user");
+    if (storedUser) {
+      setUser(JSON.parse(storedUser));
+    }
+  }, []);
+
+  const token = localStorage.getItem("token");
 
   const handleLogout = () => {
     localStorage.removeItem("token");
     localStorage.removeItem("user");
+    setUser(null);
     navigate("/login");
   };
 
@@ -20,10 +28,10 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="navbar">
+    <nav className={`navbar ${menuOpen ? "navbar-open" : ""}`}>
       <div className="nav-container">
         {/* Logo */}
-        <Link to="/" className="nav-logo">
+        <Link to="/" className="nav-logo" aria-label="Home">
           <i className="fas fa-paw"></i> Animal Hospital
         </Link>
 
@@ -31,10 +39,11 @@ const Navbar = () => {
         <div
           className={`hamburger ${menuOpen ? "active" : ""}`}
           onClick={toggleMenu}
+          aria-label="Toggle navigation menu"
         >
-          <span></span>
-          <span></span>
-          <span></span>
+          <span className="bar"></span>
+          <span className="bar"></span>
+          <span className="bar"></span>
         </div>
 
         {/* Navigation Menu */}
@@ -43,6 +52,7 @@ const Navbar = () => {
             to="/"
             className="nav-link"
             onClick={() => setMenuOpen(false)}
+            aria-label="Home"
           >
             Home
           </Link>
@@ -50,6 +60,7 @@ const Navbar = () => {
             to="/services"
             className="nav-link"
             onClick={() => setMenuOpen(false)}
+            aria-label="Services"
           >
             Services
           </Link>
@@ -63,16 +74,18 @@ const Navbar = () => {
                     to="/dashboard"
                     className="nav-link"
                     onClick={() => setMenuOpen(false)}
+                    aria-label="Admin Dashboard"
                   >
                     Dashboard
                   </Link>
-                  <Link
+                  {/* <Link
                     to="/patients"
                     className="nav-link"
                     onClick={() => setMenuOpen(false)}
+                    aria-label="Patients"
                   >
                     Patients
-                  </Link>
+                  </Link> */}
                 </>
               )}
 
@@ -82,6 +95,7 @@ const Navbar = () => {
                   to="/my-appointments"
                   className="nav-link"
                   onClick={() => setMenuOpen(false)}
+                  aria-label="My Appointments"
                 >
                   My Appointments
                 </Link>
@@ -89,7 +103,11 @@ const Navbar = () => {
 
               {/* Logout Button */}
               <div className="nav-user">
-                <button onClick={handleLogout} className="logout-btn">
+                <button
+                  onClick={handleLogout}
+                  className="logout-btn"
+                  aria-label="Logout"
+                >
                   Logout
                 </button>
               </div>
@@ -100,6 +118,7 @@ const Navbar = () => {
                 to="/login"
                 className="nav-link"
                 onClick={() => setMenuOpen(false)}
+                aria-label="Login"
               >
                 Login
               </Link>

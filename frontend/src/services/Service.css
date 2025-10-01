@@ -14,8 +14,8 @@
   justify-content: space-between;
   align-items: center;
   padding: 60px 10%;
-  background: linear-gradient(120deg, var(--light-bg), #fff5f5);
-  flex-wrap: wrap;
+  background: wheat
+  /* flex-wrap: wrap; */
 }
 
 .services-left h1 {
@@ -45,7 +45,9 @@
 
 .services-right img {
   max-width: 380px;
+  height: 80%;
   animation: floatUp 3s ease-in-out infinite;
+  mix-blend-mode: color-burn;
 }
 
 /* Services Section */

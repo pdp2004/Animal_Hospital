@@ -1,5 +1,6 @@
 .animal-footer {
-    background: linear-gradient(135deg, #1b3a2f 0%, #2f6651 50%, #5a9a7e 100%);
+    /* background: linear-gradient(135deg, #1b3a2f 0%, #2f6651 50%, #5a9a7e 100%); */
+    background-color: wheat;
     color: #f5f5f5; /* softer white */
     padding: 3rem 2rem 1rem;
     position: relative;
@@ -22,7 +23,7 @@
     position: absolute;
     font-size: 1.5rem;
     opacity: 0.3;
-    color: #ffcc66; /* light yellow/orange */
+    color: black;
     animation: floatPaw 6s ease-in-out infinite;
 }
 
@@ -47,7 +48,7 @@
 }
 
 .footer-section h3,
-.footer-section h4 { color: #ffa500; margin-bottom: 1rem; font-weight: 600; }
+.footer-section h4 { color: #ff5500; margin-bottom: 1rem; font-weight: 600; }
 
 .footer-section p { line-height: 1.6; margin-bottom: 0.5rem; }
 
@@ -56,7 +57,7 @@
 .footer-section ul li { margin-bottom: 0.5rem; }
 
 .footer-section ul li a {
-    color: #f5f5f5;
+    color: black;
     text-decoration: none;
     transition: all 0.3s ease;
     display: inline-block;
@@ -78,6 +79,7 @@
     display: inline-block;
     padding: 0.5rem;
     background: rgba(255, 255, 255, 0.1);
+    color: black;
     border-radius: 50%;
     transition: all 0.3s ease;
     text-decoration: none;
@@ -174,7 +176,7 @@
 }
 
 .footer-links a {
-    color: #f5f5f5;
+    color: black;
     text-decoration: none;
     transition: all 0.3s ease;
     position: relative;

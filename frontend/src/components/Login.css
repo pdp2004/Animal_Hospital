@@ -1,0 +1,129 @@
+.auth-container {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;      /* Centers horizontally */
+    align-items: center;          /* Centers vertically */
+    height: 100vh;                /* Full viewport height */
+  }
+  
+  .auth-form {
+    background-color: wheat;  /* Background color applied only to the form container */
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 30px 40px;
+    max-width: 450px;
+    width: 100%;
+    box-sizing: border-box;        /* Prevents padding from affecting the width */
+    text-align: center;
+  }
+  
+  h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  label {
+    font-size: 0.9rem;
+    color: #333;
+    display: block;
+    margin-bottom: 8px;
+    text-align: left;
+  }
+  
+  input {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    outline: none;
+    transition: border-color 0.3s ease;
+  }
+  
+  input:focus {
+    border-color: #4d90fe;
+  }
+  
+  button {
+    padding: 12px;
+    background-color: #4d90fe;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  button:hover:not(:disabled) {
+    background-color: wheat;
+  }
+  
+  .error-message {
+    color: #e74c3c;
+    background-color: #f2d7d5;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+  }
+  
+  .success-message {
+    color: #27ae60;
+    background-color: #d5f4e6;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+  }
+  
+  p {
+    font-size: 0.9rem;
+    color: #333;
+    margin-top: 20px;
+  }
+  
+  a {
+    color: #4d90fe;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .auth-form {
+      padding: 20px 30px;
+    }
+  
+    h2 {
+      font-size: 1.8rem;
+    }
+  
+    .form-group {
+      margin-bottom: 15px;
+    }
+  
+    button {
+      padding: 10px;
+    }
+  }
+  

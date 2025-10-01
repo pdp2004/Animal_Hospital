@@ -184,8 +184,8 @@
   
   /* Emergency Banner */
   .emergency-banner {
-    background: #f7941d;
-    color: #fff;
+    /* background: #f7941d; */
+    color: black;
     padding: 60px 20px;
   }
   
@@ -208,7 +208,7 @@
     min-width: 200px;
   }
   
-  .btn-emergency {
+  .btn-emergencyy {
     background: #fff;
     color: #f7941d;
     font-size: 18px;
@@ -219,8 +219,8 @@
     transition: 0.3s;
   }
   
-  .btn-emergency:hover {
-    background: #fef1e0;
+  .btn-emergencyy:hover {
+    background: wheat;
   }
   
   /* CTA Section */
@@ -238,4 +238,5 @@
   .cta-buttons {
     margin-top: 25px;
   }
+
   

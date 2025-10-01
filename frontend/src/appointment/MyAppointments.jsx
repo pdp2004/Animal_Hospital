@@ -20,7 +20,7 @@ const MyAppointments = () => {
 
     const fetchAppointments = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/api/appointments/appointments");
+        const res = await axios.get("http://localhost:3000/api/appointments/appointments");
         setAppointments(
           res.data.map((appt) => ({
             ...appt,
@@ -41,7 +41,7 @@ const MyAppointments = () => {
   const handleCancelAppointment = async (id) => {
     if (!window.confirm("Are you sure you want to cancel this appointment?")) return;
     try {
-      await axios.put(`http://localhost:5000/api/appointments/${id}`, { status: "Cancelled" });
+      await axios.put(`http://localhost:3000/api/appointments/${id}`, { status: "Cancelled" });
       setAppointments((prev) =>
         prev.map((appt) =>
           appt._id === id ? { ...appt, status: "Cancelled" } : appt
@@ -85,7 +85,7 @@ const MyAppointments = () => {
     }
 
     try {
-      await axios.put(`http://localhost:5000/api/appointments/${id}`, form);
+      await axios.put(`http://localhost:3000/api/appointments/${id}`, form);
       setAppointments((prev) =>
         prev.map((appt) =>
           appt._id === id ? { ...appt, ...form, status: appt.status || "Confirmed" } : appt

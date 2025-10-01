@@ -19,16 +19,22 @@ const Dashboard = () => {
   const fetchDashboardData = async () => {
     try {
       const [appointmentsRes, upcomingRes, todayRes] = await Promise.all([
-        axios.get("http://localhost:5000/api/appointments/appointments"),
-        axios.get("http://localhost:5000/api/appointments/today"),
-        axios.get("http://localhost:5000/api/appointments/upcoming"),
+        axios.get("http://localhost:3000/api/appointments/appointments"),
+        axios.get("http://localhost:3000/api/appointments/upcoming"),
+        axios.get("http://localhost:3000/api/appointments/today"),
       ]);
+
+      // Assuming you want to filter today's appointments by status or time
+      const todayAppointmentsFiltered = todayRes.data.filter(appointment => {
+        // Example filter: Only show appointments that are 'confirmed' or 'pending'
+        return appointment.status === "confirmed" || appointment.status === "pending";
+      });
 
       setStats({
         appointments: appointmentsRes.data.length,
-        patients: 0,
+        patients: 0, // You can replace this with actual patient data if needed
         upcomingAppointments: upcomingRes.data,
-        todayAppointments: todayRes.data,
+        todayAppointments: todayAppointmentsFiltered,
       });
     } catch (error) {
       console.error("Error fetching dashboard data:", error);
