@@ -1,5 +1,4 @@
 import React from 'react';
-// import { Link } from 'react-router-dom';
 import ImageCard from './ImageCard';
 import FeaturesSection from './FeaturesSection';
 import ServicesPreview from '../services/ServicesPreview';
@@ -14,59 +13,43 @@ const Home = () => {
 
   return (
     <div className="home-container">
-      <ImageCard />
-      <FeaturesSection />
-      <ServicesPreview />
-      <DoctorSlider />
-      <Slider />
 
-      {/* Testimonials */}
-      <section className="testimonials-section">
+      {/* Hero Section */}
+      <section className="hero" id="home">
         <div className="container">
-          <h2>What Pet Owners Say</h2>
-          <div className="testimonials-grid">
-            <div className="testimonial-card">
-              <div className="testimonial-text">
-                "The staff at Animal Hospital saved my dog's life during an emergency. Their care and compassion are unmatched!"
-              </div>
-              <div className="testimonial-author">
-                <strong>Sarah Johnson</strong>
-                <span>Dog Owner</span>
-              </div>
-            </div>
-            <div className="testimonial-card">
-              <div className="testimonial-text">
-                "Professional, caring, and always available. They've been taking care of our cats for years with exceptional service."
-              </div>
-              <div className="testimonial-author">
-                <strong>Mike Chen</strong>
-                <span>Cat Owner</span>
-              </div>
-            </div>
-            <div className="testimonial-card">
-              <div className="testimonial-text">
-                "The best veterinary care in town! Their advanced facilities and knowledgeable staff give me peace of mind."
-              </div>
-              <div className="testimonial-author">
-                <strong>Emily Rodriguez</strong>
-                <span>Bird Owner</span>
-              </div>
-            </div>
+          <div className="hero-content">
+            <h1>Professional Services</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <a href="#contact" className="btn">Get in Touch</a>
           </div>
         </div>
       </section>
 
+      {/* Main Content */}
+      <section className="main-content">
+        <div className="container">
+          <h2>Welcome to Animal Hospital</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          <a href="#about" className="btn">Learn More</a>
+        </div>
+      </section>
+
+      {/* Your Existing Components */}
+      {/* <ImageCard /> */}
+      <FeaturesSection />
+      {/* <ServicesPreview /> */}
+      {/* <DoctorSlider /> */}
+      <Slider />
+
+      {/* Testimonials */}
+
       {/* Emergency Banner */}
       <section className="emergency-banner">
         <div className="container">
-        <h2>🚨 24/7 Emergency Veterinary Services</h2>
+          <h2>🚨 24/7 Emergency Veterinary Services</h2>
           <div className="emergency-content">
             <div className="emergency-info"> 
               <p>For immediate and expert care of your pet, our veterinary team is available around the clock. Please do not hesitate to reach out if your pet requires urgent medical attention.</p>
-              <div className="emergency-contact">
-                <strong>Emergency Hotline: (555) 123-HELP</strong>
-                <span>After-Hours Assistance: (555) 555-EMER</span>
-              </div>
             </div>
             <div className="emergency-actions">
               <button className="btn-emergencyy">
@@ -77,29 +60,43 @@ const Home = () => {
         </div>
       </section>
 
-
-      {/* CTA Section */}
-      {/* <section className="cta-section">
+      {/* Footer */}
+      <footer>
         <div className="container">
-          <div className="cta-content">
-            <h2>Ready to Give Your Pet the Best Care?</h2>
-            <p>Join thousands of pet owners who trust us with their furry family members</p>
-            <div className="cta-buttons">
-              {user ? (
-                <Link to="/appointments" className="btn-primary btn-large">
-                  Book Appointment
-                </Link>
-              ) : (
-                <Link to="/register" className="btn-primary btn-large">
-                  Create Account
-                </Link>
-              )}
+          <div className="footer-content">
+            <div className="footer-section">
+              <h3>Company</h3>
+              <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#cases">Cases</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+              </ul>
+            </div>
+            <div className="footer-section">
+              <h3>Services</h3>
+              <ul>
+                <li><a href="#commercial">Commercial Cleaning</a></li>
+                <li><a href="#office">Office Cleaning</a></li>
+                <li><a href="#building">Building Cleaning</a></li>
+                <li><a href="#floor">Floor Cleaning</a></li>
+                <li><a href="#apartment">Apartment Cleaning</a></li>
+              </ul>
+            </div>
+            <div className="footer-section">
+              <div className="contact-info">
+                <p>152-515-6565</p>
+                <p>Animalhospital@gmail.com</p>
+                <p>New Orleans, USA</p>
+              </div>
             </div>
           </div>
+          <div className="copyright">
+            <p>&copy; 2025 Animal Hospital. All rights reserved.</p>
+          </div>
         </div>
-      </section> */}
-
-      <Footer />
+      </footer>
     </div>
   );
 };

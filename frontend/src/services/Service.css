@@ -58,11 +58,13 @@
 }
 
 .section-title {
-  color: var(--secondary-color);
-  font-weight: 600;
+  color: var(--primary-color);
+  /* font-weight: 600; */
   margin-bottom: 8px;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
   letter-spacing: 2px;
+  font-weight: bold;
+
 }
 
 .main-heading {

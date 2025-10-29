@@ -24,11 +24,14 @@ const Dashboard = () => {
         axios.get("http://localhost:3000/api/appointments/today"),
       ]);
 
-      // Assuming you want to filter today's appointments by status or time
-      const todayAppointmentsFiltered = todayRes.data.filter(appointment => {
-        // Example filter: Only show appointments that are 'confirmed' or 'pending'
-        return appointment.status === "confirmed" || appointment.status === "pending";
-      });
+      console.log("Upcoming Appointments Response:", upcomingRes.data); // Log the response
+      console.log("Today's Appointments Response:", todayRes.data); // Log the response to check structure
+
+      // Check if todayRes.data is an array before applying filter
+      const todayAppointmentsFiltered = Array.isArray(todayRes.data)
+        ? todayRes.data.filter(appointment => 
+            appointment.status === "confirmed" || appointment.status === "pending")
+        : [];
 
       setStats({
         appointments: appointmentsRes.data.length,
@@ -62,9 +65,7 @@ const Dashboard = () => {
           </div>
           <h3>Total Appointments</h3>
           <div className="stat-number count-up">{stats.appointments}</div>
-          <Link to="/totalAppointments" className="stat-link">
-            View All
-          </Link>
+          <Link to="/totalAppointments" className="stat-link">View All</Link>
         </div>
 
         <div className="stat-card animate-fade-in" style={{ animationDelay: "0.2s" }}>
@@ -75,9 +76,7 @@ const Dashboard = () => {
           </div>
           <h3>Registered Patients</h3>
           <div className="stat-number count-up">{stats.patients}</div>
-          <Link to="/patients" className="stat-link">
-            Manage Patients
-          </Link>
+          <Link to="/patients" className="stat-link">Manage Patients</Link>
         </div>
 
         <div className="stat-card animate-fade-in" style={{ animationDelay: "0.3s" }}>
@@ -105,11 +104,7 @@ const Dashboard = () => {
                 <div className="appointment-info">
                   <h4>{appointment.petName || "Unknown Pet"}</h4>
                   <p>{appointment.time}</p>
-                  <span
-                    className={`status-badge ${
-                      appointment.status?.toLowerCase() || "pending"
-                    }`}
-                  >
+                  <span className={`status-badge ${appointment.status?.toLowerCase() || "pending"}`}>
                     {appointment.status || "Pending"}
                   </span>
                 </div>
@@ -127,9 +122,9 @@ const Dashboard = () => {
       {/* ✅ Upcoming Appointments */}
       <div className="upcoming-section animate-slide-up" style={{ animationDelay: "0.6s" }}>
         <h2>Upcoming Appointments</h2>
-        {stats.upcomingAppointments.length > 0 ? (
+        {stats.upcomingAppointments.data.length > 0 ? (
           <div className="appointments-list">
-            {stats.upcomingAppointments.map((appointment, index) => (
+            {stats.upcomingAppointments.data.map((appointment, index) => (
               <div 
                 key={appointment._id} 
                 className="appointment-item animate-fade-in"
@@ -137,14 +132,8 @@ const Dashboard = () => {
               >
                 <div className="appointment-info">
                   <h4>{appointment.petName || "Unknown Pet"}</h4>
-                  <p>
-                    {appointment.date} at {appointment.time}
-                  </p>
-                  <span
-                    className={`status-badge ${
-                      appointment.status?.toLowerCase() || "pending"
-                    }`}
-                  >
+                  <p>{appointment.date} at {appointment.time}</p>
+                  <span className={`status-badge ${appointment.status?.toLowerCase() || "pending"}`}>
                     {appointment.status || "Pending"}
                   </span>
                 </div>

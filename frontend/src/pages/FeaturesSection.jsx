@@ -5,7 +5,7 @@ const FeaturesSection = () => {
   return (
     <section className="features-section">
       <div className="container">
-        <h2 className="section-title">Why Choose Our Animal Hospital?</h2>
+        <h2>Why Choose Our Animal Hospital ?</h2>
         <div className="features-grid">
           <div className="feature-card fade-in">
             <div className="feature-icon">⏰</div>
