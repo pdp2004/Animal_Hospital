@@ -6,6 +6,7 @@ import DoctorSlider from './DoctorSlider';
 import Slider from './Slider';
 import Footer from '../components/Footer';
 import "./Home.css";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   // Get user from localStorage (adjust based on your auth implementation)
@@ -20,7 +21,8 @@ const Home = () => {
           <div className="hero-content">
             <h1>Professional Services</h1>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-            <a href="#contact" className="btn">Get in Touch</a>
+            {/* <a href="#contact" className="btn">Get in Touch</a> */}
+            <Link to="/bookappointment"><button  className="btn">Get in Touch</button></Link>
           </div>
         </div>
       </section>
@@ -30,7 +32,8 @@ const Home = () => {
         <div className="container">
           <h2>Welcome to Animal Hospital</h2>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-          <a href="#about" className="btn">Learn More</a>
+          {/* <a href="#about" className="btn">Learn More</a> */}
+          <Link to="/bookappointment"><button  className="btn">Get in Touch</button></Link>
         </div>
       </section>
 
@@ -41,6 +44,7 @@ const Home = () => {
       {/* <DoctorSlider /> */}
       <Slider />
 
+ 
       {/* Testimonials */}
 
       {/* Emergency Banner */}
