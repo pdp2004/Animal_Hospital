@@ -7,7 +7,7 @@
   }
   
   .auth-form {
-    background-color: wheat;  /* Background color applied only to the form container */
+    background-color: ghostwhite;  /* Background color applied only to the form container */
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     padding: 30px 40px;
@@ -56,7 +56,7 @@
   
   button {
     padding: 12px;
-    /* background-color: #4d90fe; */
+    background-color: #4d90fe;
     color: #fff;
     border: none;
     border-radius: 5px;

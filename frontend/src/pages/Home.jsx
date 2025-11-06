@@ -1,10 +1,6 @@
 import React from 'react';
-import ImageCard from './ImageCard';
 import FeaturesSection from './FeaturesSection';
-import ServicesPreview from '../services/ServicesPreview';
-import DoctorSlider from './DoctorSlider';
 import Slider from './Slider';
-import Footer from '../components/Footer';
 import "./Home.css";
 import { Link } from "react-router-dom";
 
@@ -22,7 +18,7 @@ const Home = () => {
             <h1>Professional Services</h1>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
             {/* <a href="#contact" className="btn">Get in Touch</a> */}
-            <Link to="/bookappointment"><button  className="btn">Get in Touch</button></Link>
+            <Link to="/bookappointment"><button  className="btn">Book Appointments</button></Link>
           </div>
         </div>
       </section>
@@ -37,15 +33,8 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Your Existing Components */}
-      {/* <ImageCard /> */}
       <FeaturesSection />
-      {/* <ServicesPreview /> */}
-      {/* <DoctorSlider /> */}
       <Slider />
-
- 
-      {/* Testimonials */}
 
       {/* Emergency Banner */}
       <section className="emergency-banner">

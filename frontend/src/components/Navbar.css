@@ -84,7 +84,7 @@
   }
   
   .navbar-open {
-    background-color: wheat;
+    background-color: whitesmoke;
   }
   
   /* Mobile styles */
@@ -92,9 +92,9 @@
     .nav-menu {
       display: none;
       flex-direction: column;
-      background-color: wheat;
+      background-color: whitesmoke;
       position: absolute;
-      top: 60px;
+      top: 59px;
       right: 0;
       width: 100%;
       padding: 20px;
